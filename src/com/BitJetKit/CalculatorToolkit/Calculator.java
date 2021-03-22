@@ -1,14 +1,22 @@
 package com.BitJetKit.CalculatorToolkit;
-
+/*
+ * Title: Calculator.java
+ * @author: BitJetKit
+ * Date: March 22, 2021
+ * Purpose: This is the fundamental calculator functionality
+ */
 public class Calculator {
 	// Declare the fields.
 	private double number1 = 0.0;
 	private double number2 = 0.0;
-	// These are the accessor getters and setters. 
-	// Maintain privacy. But also, maintain security.
-	public double getNumber1() {
-		return number1;
-	}
+	private double number3 = 0.0;
+	private int factNum;
+	// These initializing variables are for the iterative series.
+	private double counter;
+	private double index;
+	private double limit;
+	private double factorial;
+	// Implement the hash code method for testing. 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -20,6 +28,7 @@ public class Calculator {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
+	// Implement the equals method for testing. 
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -35,6 +44,11 @@ public class Calculator {
 			return false;
 		return true;
 	}
+	// These are the accessor getters and setters. 
+	// Maintain privacy. But also, maintain security.	
+	public double getNumber1() {
+		return number1;
+	}
 	public void setNumber1(double number1) {
 		this.number1 = number1;
 	}
@@ -43,6 +57,31 @@ public class Calculator {
 	}
 	public void setNumber2(double number2) {
 		this.number2 = number2;
+	}
+	public double getCounter() {
+		return counter;
+	}
+	public void setCounter(double counter) {
+		this.counter = counter;
+	}
+	public double getIndex() {
+		return index;
+	}
+	public void setIndex(double index) {
+		this.index = index;
+	}
+	public double getLimit() {
+		return limit;
+	}
+	public void setLimit(double limit) {
+		this.limit = limit;
+	}
+
+	public double getFactorial() {
+		return factorial;
+	}
+	public void setFactorial(double factorial) {
+		this.factorial = factorial;
 	}
 	public void add(double number1, double number2) {
 		double sum = number1 + number2;
@@ -77,4 +116,53 @@ public class Calculator {
 	public void aTan(double number1) {
 		double aTanResult = Math.atan(number1);
 	}
+	public void iterativeSeries(double number1) {
+		for(index = getIndex(); index < getLimit(); index++) {
+			index++;
+		}
+	}
+	// Get the limit then multiply the limit by every iteratively less number to 1.
+	static int factorialCalculator(int factNum) {
+		if(factNum == 0) {
+			return 1;
+		}
+		else {
+			return(factNum * factorialCalculator(factNum - 1));
+		}
+	}
+	static double triangleCalculator(double number1, double number2) {
+		double triangleSide = 0.0;
+		if(number1 == 0 && number2 == 0) {
+			return triangleSide;
+		}
+		else if(number1 == 0 && number2 != 0){
+			return triangleSide;
+		}
+		else if(number1 != 0 && number2 == 0) {
+			return triangleSide;
+		}
+		else {
+			triangleSide = 180 - number1 - number2;
+			return triangleSide;	
+		}
+	}
+	static double triangleArea(double number1, double number2) {
+		double area = 0.0;
+		double height = number1;
+		double base = number2;
+		if(number1 == 0 && number2 == 0) {
+			return area;
+		}
+		else if(number1 == 0 && number2 != 0){
+			return area;
+		}
+		else if(number1 != 0 && number2 == 0) {
+			return area;
+		}
+		else {
+			area = (height / base) / 2;
+			return area;	
+		}
+	}
+	static double cosineRule()
 }

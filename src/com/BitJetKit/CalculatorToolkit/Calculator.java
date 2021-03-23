@@ -76,93 +76,102 @@ public class Calculator {
 	public void setLimit(double limit) {
 		this.limit = limit;
 	}
-
-	public double getFactorial() {
-		return factorial;
-	}
-	public void setFactorial(double factorial) {
-		this.factorial = factorial;
-	}
-	public void add(double number1, double number2) {
+	static String add(double number1, double number2) {
 		double sum = number1 + number2;
+		
+		return (number1 + " + " + number2 + " = " + sum);
+		
 	}
-	public void subtract(double number1, double number2) {
+	static String subtract(double number1, double number2) {
 		double difference = number1 - number2;
+		
+		return (number1 + " - " + number2 + " = " + difference);
 	}
-	public void multiply(double number1, double number2) {
+	static String multiply(double number1, double number2) {
 		double product = number1 * number2;
+
+		return (number1 + " * " + number2 + " = " + product);
 	}
-	public void divide(double number1, double number2) {
+	static String divide(double number1, double number2) {
 		double division = number1 / number2;
+		
+		return (number1 + " / " + number2 + " = " + division);
+
 	}
-	public void modulus(double number1, double number2) {
+	static String modulus(double number1, double number2) {
 		double remainder = number1 % number2;
+		
+		return (number1 + " % " + number2 + " = " + remainder);
 	}
-	public void sin(double number1) {
+	static String sin(double number1) {
 		double sinResult = Math.sin(number1);
+		
+		return("sin(" + number1 + ")" + " = " + sinResult);
 	}
-	public void cos(double number1) {
+	static String cos(double number1) {
 		double cosResult = Math.cos(number1);
+		
+		return("cos(" + number1 + ")" + " = " + cosResult);
 	}
-	public void tan(double number1) {
+	static String tan(double number1) {
 		double tanResult = Math.tan(number1);
+		
+
+		return("tan(" + number1 + ")" + " = " + tanResult);
 	}
-	public void aSin(double number1) {
+	static String aSin(double number1) {
 		double aSinResult = Math.asin(number1);
+		
+		return("arcsin(" + number1 + ")" + " = " + aSinResult);
 	}
-	public void aCos(double number1) {
+	static String aCos(double number1) {
 		double aCosResult = Math.acos(number1);
+		
+		return("arccos(" + number1 + ")" + " = " + aCosResult);
 	}
-	public void aTan(double number1) {
+	static String aTan(double number1) {
 		double aTanResult = Math.atan(number1);
-	}
-	public void iterativeSeries(double number1) {
-		for(index = getIndex(); index < getLimit(); index++) {
-			index++;
-		}
-	}
-	// Get the limit then multiply the limit by every iteratively less number to 1.
-	static int factorialCalculator(int factNum) {
-		if(factNum == 0) {
-			return 1;
-		}
-		else {
-			return(factNum * factorialCalculator(factNum - 1));
-		}
-	}
-	static double triangleCalculator(double number1, double number2) {
+		
+		return("arcTan(" + number1 + ")" + " = " + aTanResult);
+	}	
+	
+	static String triangleCalculator(double number1, double number2) {
 		double triangleSide = 0.0;
+		
+		double side1 = number1;
+		double side2 = number2;
 		if(number1 == 0 && number2 == 0) {
-			return triangleSide;
+			return String.valueOf(triangleSide);
 		}
 		else if(number1 == 0 && number2 != 0){
-			return triangleSide;
+			return String.valueOf(triangleSide);
 		}
 		else if(number1 != 0 && number2 == 0) {
-			return triangleSide;
+			return String.valueOf(triangleSide);
 		}
 		else {
-			triangleSide = 180 - number1 - number2;
-			return triangleSide;	
+			triangleSide = 180 - side1 - side2;
+			return "Side 1 = " + String.valueOf(side1) + " Side 2 = " + "String.valueOf(side2); " + "180 - " + 
+			String.valueOf(side1) + " - " + String.valueOf(side2) + " = " + String.valueOf(triangleSide);	
 		}
 	}
-	static double triangleArea(double number1, double number2) {
+	static String triangleArea(double number1, double number2) {
 		double area = 0.0;
 		double height = number1;
 		double base = number2;
 		if(number1 == 0 && number2 == 0) {
-			return area;
+			return "Enter values for the 1st and 2nd known sides";
 		}
 		else if(number1 == 0 && number2 != 0){
-			return area;
+			return "Enter a value for the 1st known side";
 		}
 		else if(number1 != 0 && number2 == 0) {
-			return area;
+			return "Enter a value for the 2nd known side";
 		}
 		else {
 			area = (height / base) / 2;
-			return area;	
+			return "Height = " + height + " Base = " + base + "; (" + height + " / " + base + ") / 2 = " + area + " Area = " + area;
+			
 		}
 	}
-	static double cosineRule()
 }

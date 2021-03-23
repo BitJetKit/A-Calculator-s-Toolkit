@@ -83,6 +83,16 @@ public class Calculator {
 		
 		return(number1 + "^(" + number2 + ") = " + increasePower);
 	}
+	static String logarithmBase2(double number1) {
+		double findTheExponent = Math.log(number1);
+		return("log_2(" + number1 + ") = " + String.valueOf(findTheExponent) + ". In English, the exponent of log base 2 raised to "
+				+ number1 + " is " + String.valueOf(findTheExponent));
+	}
+	static String logarithmBase10(double number1) {
+		double findTheExponent = Math.log10(number1);
+		return("log_10(" + number1 + ") = " + String.valueOf(findTheExponent) + ". In English, the exponent of log base 10 raised to "
+				+ number1 + " is " + String.valueOf(findTheExponent));
+	}
 	static String sin(double number1) {
 		double sinResult = Math.sin(number1);
 		

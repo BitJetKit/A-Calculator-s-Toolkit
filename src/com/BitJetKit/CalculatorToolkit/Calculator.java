@@ -9,13 +9,6 @@ public class Calculator {
 	// Declare the fields.
 	private double number1 = 0.0;
 	private double number2 = 0.0;
-	private double number3 = 0.0;
-	private int factNum;
-	// These initializing variables are for the iterative series.
-	private double counter;
-	private double index;
-	private double limit;
-	private double factorial;
 	// Implement the hash code method for testing. 
 	@Override
 	public int hashCode() {
@@ -58,24 +51,6 @@ public class Calculator {
 	public void setNumber2(double number2) {
 		this.number2 = number2;
 	}
-	public double getCounter() {
-		return counter;
-	}
-	public void setCounter(double counter) {
-		this.counter = counter;
-	}
-	public double getIndex() {
-		return index;
-	}
-	public void setIndex(double index) {
-		this.index = index;
-	}
-	public double getLimit() {
-		return limit;
-	}
-	public void setLimit(double limit) {
-		this.limit = limit;
-	}
 	static String add(double number1, double number2) {
 		double sum = number1 + number2;
 		
@@ -102,6 +77,11 @@ public class Calculator {
 		double remainder = number1 % number2;
 		
 		return (number1 + " % " + number2 + " = " + remainder);
+	}
+	static String exponent(double number1, double number2) {
+		double increasePower = Math.pow(number1, number2);
+		
+		return(number1 + "^(" + number2 + ") = " + increasePower);
 	}
 	static String sin(double number1) {
 		double sinResult = Math.sin(number1);

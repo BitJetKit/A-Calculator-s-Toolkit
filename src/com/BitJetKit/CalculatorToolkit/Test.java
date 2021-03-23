@@ -26,6 +26,7 @@ public class Test {
 		} catch(NumberFormatException e) {
 			System.out.println("Enter a value from 1 to 3 (no words).");
 		}
+		choice = reader.nextInt();
 		if (choice != 1 || choice != 2 || choice != 3) {
 			System.out.println("Enter a value from 1 to 3 (no words).");
 		}
@@ -39,10 +40,17 @@ public class Test {
 		else if (choice == 2)
 		{
 			System.out.println("1. Exponent: Find a number to the power of another number.");
-			System.out.println("2. Logarithm: Find ")
-		}		System.out.println("Find a sine value");
-		System
-		
+			System.out.println("2. Logarithm: Find a power of another number an exponent is raised.");
+		}		
+		else if (choice == 3)
+		{
+			System.out.println("1. Find a sine value.");
+			System.out.println("2. Find a cosine value.");
+			System.out.println("3. Find a  tangent value.");
+			System.out.println("4. Find a sinh value.");
+			System.out.println("5. Find a cosinh value.");
+			System.out.println("6. Find a  tanh value.");
+		}
 	}
 
 }
